@@ -1,0 +1,25 @@
+{
+  "name": "dual-module-pkg",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc && gen-esm-wrapper . dist/index.mjs"
+  },
+  "dependencies": {
+    "dot-prop": "^7.2.0",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "gen-esm-wrapper": "^1.1.3"
+  }
+}
